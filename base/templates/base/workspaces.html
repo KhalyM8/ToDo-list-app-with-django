@@ -1,0 +1,17 @@
+{% block content %}
+    <h1>{{ workspace.name }}</h1>
+    <div>
+        <div>
+            <a href = "{% url 'create-task'%}">Create-Task</a>
+            {% for task in tasks %}
+                <div>
+                    <a href="{% url 'delete-task' task.id%}">Mark Done</a>
+                        <h1>{{ task.name }}</h1>
+                    </a>
+                        <h1>{{ task.description }}</h1>
+                        <h1>{{ task.created }}</h1>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
